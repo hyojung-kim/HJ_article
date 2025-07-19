@@ -18,21 +18,30 @@ public class App {
 
 
         Container.getDBConnection().connect();
+
         articleController = new ArticleController();
         systemController = new SystemController();
 
     }
     public void run(){
+        System.out.println("메인");
+        System.out.println("1. 회원가입");
+        System.out.println("2. 로그인");
+        System.out.println("3. 로그아웃");
+        System.out.println("상태");
+        articleController.list();
+        System.out.println("게시글 등록");
 
-        String command = Container.getSc().nextLine().trim();
-        while(true) {
-            System.out.println("====CLI BOARD START====");
+
+
+        while (true){
+            System.out.print("명령) ");
+            String command = Container.getSc().nextLine();
+            Request request = new Request(Container.getSc().nextLine().trim());
+            if(request.getActionCode().equals("등록")){
+                articleController.write();
+            }
         }
-
-
-        //작업1 !!!!!!!!!!!!!
-        //작업2 !!!!!!!!!!!!!
-        //작업3 !!!!!!!!!!!!!
 
 
     }

@@ -24,6 +24,23 @@ public class App {
 
     }
     public void run(){
+        screen();
+        while (true){
+            System.out.print("명령) ");
+            Request request = new Request(Container.getSc().nextLine().trim());
+            if(request.getActionCode().equals("등록")){
+                articleController.write();
+                screen();
+            } else if (request.getActionCode().equals("가입")) {
+                articleController.join();
+            }
+
+        }
+
+
+    }
+
+    void screen(){
         System.out.println("메인");
         System.out.println("1. 회원가입");
         System.out.println("2. 로그인");
@@ -31,18 +48,5 @@ public class App {
         System.out.println("상태");
         articleController.list();
         System.out.println("게시글 등록");
-
-
-
-        while (true){
-            System.out.print("명령) ");
-            String command = Container.getSc().nextLine();
-            Request request = new Request(Container.getSc().nextLine().trim());
-            if(request.getActionCode().equals("등록")){
-                articleController.write();
-            }
-        }
-
-
     }
 }

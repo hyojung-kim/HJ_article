@@ -10,13 +10,13 @@ public class Request {
         String[] commandList = command.split("\\?", 2);//수정?id=2&title=제목1&content=가나다
         actionCode = commandList[0];
         if(commandList.length == 1) return;
-        String[] paramList = commandList[1].split("&"); //id=2 & title=제목1 & content=가나다
-        for(String paramsRow :  paramList) {
-            String[] paramStr = paramsRow.split("=",2);
-            String key = paramStr[0];
-            String value = paramStr[1];
-            params.put(key, value);
-        }
+//        String[] paramList = commandList[1].split("&"); //id=2 & title=제목1 & content=가나다
+//        for(String paramsRow :  paramList) {
+//            String[] paramStr = paramsRow.split("=",2);
+//            String key = paramStr[0];
+//            String value = paramStr[1];
+//            params.put(key, value);
+//        }
     }
     public String getActionCode() {
         return actionCode;

@@ -29,4 +29,23 @@ public class ArticleController {
         int id = articleService.create(title, content, memberId);
         System.out.printf("%d번 게시글이 등록되었습니다.\n", id);
     }
+
+    public void join() {
+        while (true){
+            System.out.print("ID : ");
+            String userId = Container.getSc().nextLine().trim();
+            String rsId = articleService.IsDuplicate(userId);
+            if(rsId != null){
+                System.out.printf("%s는 중복된 ID 입니다.\n", rsId);
+                break;
+            }
+
+            System.out.print("PW : ");
+            String PW = Container.getSc().nextLine().trim();
+            articleService.join(userId, PW);
+            System.out.printf("%s 가입완료.\n", userId);
+            break;
+        }
+
+    }
 }

@@ -15,4 +15,12 @@ public class ArticleService {
     public int create(String title, String content, int memberId) {
         return articleRepository.create(title, content, memberId);
     }
+
+    public String IsDuplicate(String userId) {
+        return articleRepository.IsDuplicate(userId);
+    }
+
+    public void join(String rsId, String PW) {
+        articleRepository.join(rsId, PW);
+    }
 }

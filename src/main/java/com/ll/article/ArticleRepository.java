@@ -31,4 +31,17 @@ public class ArticleRepository {
                 "VALUES('%s', '%s', %d);", title, content, memberId);
         return Container.getDBConnection().insert(sql);
     }
+
+    public String IsDuplicate(String userId) {
+        String sql = String.format("SELECT * FROM `MEMBER` WHERE userId = '%s';",userId);
+        Map<String, Object> row = Container.getDBConnection().selectRow(sql);
+        userId = (String)row.get("userId");
+        return userId;
+    }
+
+    public void join(String rsId, String pw) {
+        String sql = String.format("INSERT INTO MEMBER (userId, password) \n" +
+                "VALUES('%s', '%s');", rsId, pw);
+        Container.getDBConnection().insert(sql);
+    }
 }

@@ -62,7 +62,7 @@ public class ArticleController {
         Map<String,Object> rs = articleService.IsDuplicate(userId, userPw);
         if(!rs.isEmpty()){
             memberId = (int)rs.get("id");
-            System.out.println(rs.get("UserId") + "로그인");
+            System.out.println(rs.get("userId") + "로그인");
             return;
         }
         System.out.println("로그인 실패");

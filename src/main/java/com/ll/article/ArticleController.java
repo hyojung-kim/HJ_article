@@ -44,7 +44,7 @@ public class ArticleController {
         System.out.print("ID : ");
         String userId = Container.getSc().nextLine().trim();
         Map<String, Object> rs = articleService.IsDuplicate(userId);
-        if (rs != null) {
+        if (!rs.isEmpty()) {
             System.out.printf("%s는 중복된 ID 입니다.\n", rs.get("userId"));
             return;
         }

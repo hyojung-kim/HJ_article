@@ -49,4 +49,10 @@ public class ArticleRepository {
                 "VALUES('%s', '%s');", rsId, pw);
         Container.getDBConnection().insert(sql);
     }
+
+    public Map<String, Object> getUserId(int memberId) {
+        String sql = String.format("SELECT id, userId FROM `member` WHERE id = %d;", memberId);
+        Map<String, Object> row = Container.getDBConnection().selectRow(sql);
+        return row;
+    }
 }

@@ -30,11 +30,14 @@ public class ArticleService {
         articleRepository.join(rsId, PW);
     }
 
-    public void loginSet(String loginId) {
-        if(loginId.equals("")){
-            System.out.println("OFF");
+    public String loginSet(int memberId) {
+        Map<String,Object> rs = articleRepository.getUserId(memberId);
+        if(rs.isEmpty()){
+            return "OFF";
         }
-        System.out.println(loginId + "ON");
-
+        return rs.get("userId") + " ON";
     }
+
+
+
 }

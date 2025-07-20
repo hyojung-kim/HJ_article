@@ -54,4 +54,9 @@ public class Article {
 
         return ymdDate;
     }
+    public String getInsTime() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("H시 m분");
+        String HmTime = InsDate.format(formatter);
+        return HmTime;
+    }
 }

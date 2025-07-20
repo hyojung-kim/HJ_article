@@ -11,11 +11,12 @@ public class ArticleController {
 
     public void list() {
         List<Article> articleList = articleService.findAll();
-        System.out.println("번호 / 제목 / 내용 / 작성자 / 날짜 ");
+        System.out.println("번호 / 제목 / 내용 / 작성자 / 날짜 / 시간");
         System.out.println("--------------------------------------------");
         for (int i = articleList.size() - 1; i >= 0; i--) {
             Article article = articleList.get(i);
-            System.out.printf("%d / %s / %s / %s / %s\n", article.getId(),article.getTitle(), article.getContent(), article.getMemberName(), article.getInsDate() );
+            System.out.printf("%d / %s / %s / %s / %s / %s\n",
+                    article.getId(),article.getTitle(), article.getContent(), article.getMemberName(), article.getInsDate(), article.getInsTime() );
         }
         System.out.println("--------------------------------------------");
     }

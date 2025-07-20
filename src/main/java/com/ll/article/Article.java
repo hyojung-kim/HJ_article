@@ -50,13 +50,10 @@ public class Article {
 
     public String getInsDate() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년MM월dd일");
-        String ymdDate = InsDate.format(formatter);
-
-        return ymdDate;
+        return InsDate.format(formatter);
     }
     public String getInsTime() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("H시 m분");
-        String HmTime = InsDate.format(formatter);
-        return HmTime;
+        return InsDate.format(formatter);
     }
 }

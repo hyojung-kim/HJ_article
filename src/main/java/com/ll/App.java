@@ -33,6 +33,9 @@ public class App {
                 screen();
             } else if (request.getActionCode().equals("가입")) {
                 articleController.join();
+            } else if (request.getActionCode().equals("로그인")) {
+                articleController.login();
+                screen();
             }
 
         }
@@ -45,7 +48,8 @@ public class App {
         System.out.println("1. 회원가입");
         System.out.println("2. 로그인");
         System.out.println("3. 로그아웃");
-        System.out.println("상태");
+        System.out.print("상태");
+        articleController.loginSet();
         articleController.list();
         System.out.println("게시글 등록");
     }

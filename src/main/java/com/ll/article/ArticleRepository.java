@@ -32,12 +32,17 @@ public class ArticleRepository {
         return Container.getDBConnection().insert(sql);
     }
 
-    public String IsDuplicate(String userId) {
+    public Map<String, Object> IsDuplicate(String userId) {
         String sql = String.format("SELECT * FROM `MEMBER` WHERE userId = '%s';",userId);
         Map<String, Object> row = Container.getDBConnection().selectRow(sql);
-        userId = (String)row.get("userId");
-        return userId;
+        return row;
     }
+    public Map<String, Object> IsDuplicate(String userId, String userPw) {
+        String sql = String.format("SELECT * FROM `MEMBER` WHERE userId = '%s' AND password = '%s';",userId, userPw);
+        Map<String, Object> row = Container.getDBConnection().selectRow(sql);
+        return row;
+    }
+
 
     public void join(String rsId, String pw) {
         String sql = String.format("INSERT INTO MEMBER (userId, password) \n" +

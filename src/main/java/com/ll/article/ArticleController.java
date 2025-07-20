@@ -1,12 +1,17 @@
 package com.ll.article;
+
 import com.ll.Container;
+
 import java.util.List;
+import java.util.Map;
 
 
 public class ArticleController {
     ArticleService articleService;
+    String loginId;
     public ArticleController() {
         articleService = new ArticleService();
+        loginId = "";
     }
 
     public void list() {
@@ -16,7 +21,7 @@ public class ArticleController {
         for (int i = articleList.size() - 1; i >= 0; i--) {
             Article article = articleList.get(i);
             System.out.printf("%d / %s / %s / %s / %s / %s\n",
-                    article.getId(),article.getTitle(), article.getContent(), article.getMemberName(), article.getInsDate(), article.getInsTime() );
+                    article.getId(), article.getTitle(), article.getContent(), article.getMemberName(), article.getInsDate(), article.getInsTime());
         }
         System.out.println("--------------------------------------------");
     }
@@ -32,21 +37,34 @@ public class ArticleController {
     }
 
     public void join() {
-        while (true){
-            System.out.print("ID : ");
-            String userId = Container.getSc().nextLine().trim();
-            String rsId = articleService.IsDuplicate(userId);
-            if(rsId != null){
-                System.out.printf("%s는 중복된 ID 입니다.\n", rsId);
-                break;
-            }
-
-            System.out.print("PW : ");
-            String PW = Container.getSc().nextLine().trim();
-            articleService.join(userId, PW);
-            System.out.printf("%s 가입완료.\n", userId);
-            break;
+        System.out.print("ID : ");
+        String userId = Container.getSc().nextLine().trim();
+        Map<String, Object> rs = articleService.IsDuplicate(userId);
+        if (rs != null) {
+            System.out.printf("%s는 중복된 ID 입니다.\n", rs.get("userId"));
+            return;
         }
+        System.out.print("PW : ");
+        String PW = Container.getSc().nextLine().trim();
+        articleService.join(userId, PW);
+        System.out.printf("%s 가입완료.\n", userId);
+    }
 
+    public void login() {
+        System.out.print("UserID : ");
+        String userId = Container.getSc().nextLine().trim();
+        System.out.print("UserPW : ");
+        String userPw = Container.getSc().nextLine().trim();
+        Map<String,Object> rs = articleService.IsDuplicate(userId, userPw);
+        if(rs != null){
+            loginId = (String)rs.get("UserId");
+            System.out.println(rs.get("UserId") + "로그인");
+            return;
+        }
+        System.out.println("로그인 실패");
+    }
+
+    public void loginSet() {
+        articleService.loginSet(loginId);
     }
 }

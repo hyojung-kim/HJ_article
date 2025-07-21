@@ -36,6 +36,9 @@ public class App {
             } else if (request.getActionCode().equals("로그인")) {
                 articleController.login();
                 screen();
+            }else if (request.getActionCode().equals("로그아웃")) {
+                articleController.logout();
+                screen();
             }
 
         }

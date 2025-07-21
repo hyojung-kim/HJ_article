@@ -55,6 +55,11 @@ public class ArticleController {
     }
     //로그인
     public void login() {
+        if(memberId != -1){
+            System.out.println("로그아웃 해주세요!!!!!!!!!!!");
+            return;
+        }
+
         System.out.print("UserID : ");
         String userId = Container.getSc().nextLine().trim();
         System.out.print("UserPW : ");
@@ -71,5 +76,13 @@ public class ArticleController {
     public void loginSet() {
         String rs = articleService.loginSet(memberId);
         System.out.println(rs); // "OFF"; or ("UserId") + " ON";
+    }
+
+    public void logout() {
+        if(memberId == -1){
+            System.out.println("로그인 해주세요!!!!!!!!!!!");
+            return;
+        }
+        memberId = -1;
     }
 }

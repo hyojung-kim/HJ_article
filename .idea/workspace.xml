@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b48ac7d7-7bc2-44e3-9a4d-5458c61376a8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/article/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/article/ArticleController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,6 +70,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "Gradle.ArticleCLI_hj [:com.ll.Main.main()].executor": "Run",
     "Gradle.소스 다운로드.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -77,7 +80,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "feature/1",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/work/ArticleCLI_hj",
+    "last_opened_file_path": "C:/work/HJ_article",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -94,6 +97,14 @@
       <recent name="com.ll.system" />
     </key>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="b48ac7d7-7bc2-44e3-9a4d-5458c61376a8" name="Changes" comment="" />
@@ -103,6 +114,7 @@
       <updated>1752812660358</updated>
       <workItem from="1752812661531" duration="3652000" />
       <workItem from="1752822129655" duration="166000" />
+      <workItem from="1753080495102" duration="2144000" />
     </task>
     <servers />
   </component>

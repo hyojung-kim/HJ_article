@@ -10,9 +10,14 @@ public class Article {
     private String content;
     private String MemberName;
     private LocalDateTime InsDate;
+    private int articleCode;
+    private int memberId;
 
-    public Article() {
-
+    public Article(String title, String content, int memberId, int articleCode) {
+        this.title = title;
+        this.memberId = memberId;
+        this.content = content;
+        this.articleCode = articleCode;
     }
 
     public Article(Map<String, Object> row) {
@@ -21,7 +26,7 @@ public class Article {
         this.content = (String)row.get("content");
         this.MemberName = (String)row.get("MemberName");
         this.InsDate = (LocalDateTime)row.get("InsDate");
-
+        this.articleCode = (int)row.get("articleCode");
     }
 
     int getId() {
@@ -45,7 +50,10 @@ public class Article {
     }
 
     public String getMemberName() {
-        return this.MemberName = MemberName;
+        return this.MemberName;
+    }
+    public int getMemberId() {
+        return this.memberId;
     }
 
     public String getInsDate() {
@@ -55,5 +63,8 @@ public class Article {
     public String getInsTime() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("H시 m분");
         return InsDate.format(formatter);
+    }
+    public int getArticleCode() {
+        return this.articleCode;
     }
 }

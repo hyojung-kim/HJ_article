@@ -18,22 +18,42 @@ public class App {
 
 
         Container.getDBConnection().connect();
+
         articleController = new ArticleController();
         systemController = new SystemController();
 
     }
     public void run(){
+        screen();
+        while (true){
+            System.out.print("명령) ");
+            Request request = new Request(Container.getSc().nextLine().trim());
+            if(request.getActionCode().equals("등록")){
+                articleController.write();
+                screen();
+            } else if (request.getActionCode().equals("가입")) {
+                articleController.join();
+            } else if (request.getActionCode().equals("로그인")) {
+                articleController.login();
+                screen();
+            }else if (request.getActionCode().equals("로그아웃")) {
+                articleController.logout();
+                screen();
+            }
 
-        String command = Container.getSc().nextLine().trim();
-        while(true) {
-            System.out.println("====CLI BOARD START====");
         }
 
 
-        //작업1 !!!!!!!!!!!!!
-        //작업2 !!!!!!!!!!!!!
-        //작업3 !!!!!!!!!!!!!
+    }
 
-
+    void screen(){
+        System.out.println("메인");
+        System.out.println("1. 회원가입");
+        System.out.println("2. 로그인");
+        System.out.println("3. 로그아웃");
+        System.out.print("상태 ");
+        articleController.loginSet();
+        articleController.list();
+        System.out.println("게시글 등록");
     }
 }

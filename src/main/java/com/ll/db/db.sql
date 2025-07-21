@@ -23,7 +23,8 @@ SELECT * FROM article;
 INSERT INTO article (title, content, memberId)
 VALUES('제목1', '내용1', 1);
 
-
+INSERT INTO member (userId, `password`)
+VALUES('User1', '1234');
 
 
 

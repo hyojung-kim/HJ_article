@@ -21,13 +21,13 @@ public class ArticleController {
             System.out.println("로그인 해주세요.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             return;
         }
+        System.out.print("1. 자유게시판 2. 공지게시판 // 1 or 2: ");
+        String Code = Container.getSc().nextLine().trim();
         System.out.print("제목 : ");
         String title = Container.getSc().nextLine().trim();
         System.out.print("내용 : ");
         String content = Container.getSc().nextLine().trim();
 
-        System.out.print("1. 자유게시판 2. 공지게시판 // 1 or 2: ");
-        String Code = Container.getSc().nextLine().trim();
         int articleCode = _getIntParam(Code);
         if(articleCode == -1){
             System.out.println("잘못된 입력입니다.");

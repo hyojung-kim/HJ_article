@@ -24,6 +24,7 @@ public class App {
 
     }
     public void run(){
+        System.out.println("입력! 회원가입, 로그인, 로그아웃");
         screen();
         while (true){
             System.out.print("명령) ");
@@ -31,7 +32,7 @@ public class App {
             if(request.getActionCode().equals("등록")){
                 articleController.write();
                 screen();
-            } else if (request.getActionCode().equals("가입")) {
+            } else if (request.getActionCode().equals("회원가입")) {
                 articleController.join();
             } else if (request.getActionCode().equals("로그인")) {
                 articleController.login();

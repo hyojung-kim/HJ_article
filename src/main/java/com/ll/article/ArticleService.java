@@ -8,13 +8,13 @@ public class ArticleService {
     public ArticleService() {
         articleRepository = new ArticleRepository();
     }
-
-    public  List<Article> findAll() {
-        return articleRepository.findAll();
+  
+    public  List<Article> findAll(int articleCode) {
+        return articleRepository.findAll(articleCode);
     }
 
-    public int create(String title, String content, int memberId) {
-        return articleRepository.create(title, content, memberId);
+    public int create(Article article) {
+        return articleRepository.create(article);
     }
 
     public Map<String, Object> IsDuplicate(String userId) {
@@ -37,7 +37,4 @@ public class ArticleService {
         }
         return rs.get("userId") + " ON";
     }
-
-
-
 }

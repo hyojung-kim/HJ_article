@@ -7,7 +7,8 @@ CREATE TABLE article (
 	title char(100) NULL UNIQUE,
 	content text NOT NULL,
 	memberId int UNSIGNED NOT NULL,
-	regDate datetime DEFAULT now() NOT null
+	regDate datetime DEFAULT now() NOT null,
+    articleCode int NOT null
 );
 CREATE TABLE `member` (
 	id int UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,

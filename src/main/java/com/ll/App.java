@@ -53,6 +53,8 @@ public class App {
         System.out.println("3. 로그아웃");
         System.out.print("상태 ");
         articleController.loginSet();
+        articleController.FreeBoard();
+        articleController.Notice();
         articleController.list();
         System.out.println("게시글 등록");
     }

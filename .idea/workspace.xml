@@ -7,7 +7,13 @@
     <list default="true" id="b48ac7d7-7bc2-44e3-9a4d-5458c61376a8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/article/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/article/Article.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/article/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/article/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/article/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/article/ArticleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/article/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/article/ArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/db/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/db/db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/article/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/article/ArticleController.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +78,9 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Gradle.ArticleCLI_hj [:com.ll.Main.main()].executor": "Run",
+
+    "Gradle.Download Sources.executor": "Run",
+
     "Gradle.소스 다운로드.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -115,6 +124,7 @@
       <workItem from="1752812661531" duration="3652000" />
       <workItem from="1752822129655" duration="166000" />
       <workItem from="1753080495102" duration="2144000" />
+      <workItem from="1753082737756" duration="6210000" />
     </task>
     <servers />
   </component>

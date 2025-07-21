@@ -55,7 +55,6 @@ public class App {
         articleController.loginSet();
         articleController.FreeBoard();
         articleController.Notice();
-        articleController.list();
         System.out.println("게시글 등록");
     }
 }

@@ -18,7 +18,7 @@ public class Article {
         this.memberId = memberId;
         this.content = content;
         this.articleCode = articleCode;
-
+    }
 
     public Article(Map<String, Object> row) {
         this.id = (int)row.get("id");

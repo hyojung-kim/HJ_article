@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 public class ArticleRepository {
-
     public List<Article> findAll(int articleCode) {
         List<Article> articleList = new ArrayList<>();
         String sql = String.format("SELECT A.id AS id,\n" +
@@ -21,6 +20,8 @@ public class ArticleRepository {
                 "ON A.memberId = M.id\n" +
                 "where ArticleCode = %d;"
                 , articleCode);
+
+          
         List<Map<String, Object>> rows = Container.getDBConnection().selectRows(sql);
         for(Map<String,Object> row : rows){
             Article article = new Article(row);
@@ -28,6 +29,7 @@ public class ArticleRepository {
         }
         return articleList;
     }
+
 
     public int create(Article article) {
         String sql = String.format("INSERT INTO article (title, content, memberId, articleCode) \n" +

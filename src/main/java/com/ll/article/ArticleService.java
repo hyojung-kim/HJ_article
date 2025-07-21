@@ -8,7 +8,7 @@ public class ArticleService {
     public ArticleService() {
         articleRepository = new ArticleRepository();
     }
-
+  
     public  List<Article> findAll(int articleCode) {
         return articleRepository.findAll(articleCode);
     }
@@ -37,7 +37,4 @@ public class ArticleService {
         }
         return rs.get("userId") + " ON";
     }
-
-
-
 }

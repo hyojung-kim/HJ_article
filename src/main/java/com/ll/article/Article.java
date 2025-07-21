@@ -18,7 +18,7 @@ public class Article {
         this.memberId = memberId;
         this.content = content;
         this.articleCode = articleCode;
-    }
+
 
     public Article(Map<String, Object> row) {
         this.id = (int)row.get("id");
@@ -64,7 +64,9 @@ public class Article {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("H시 m분");
         return InsDate.format(formatter);
     }
+
     public int getArticleCode() {
         return this.articleCode;
     }
+
 }

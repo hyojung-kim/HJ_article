@@ -14,29 +14,18 @@ public class ArticleController {
         articleService = new ArticleService();
         memberId = -1; // 초기화용
     }
-    //게시글 데이터 가져오기
-    public void list() {
-//        List<Article> articleList = articleService.findAll();
-//        System.out.println("번호 / 제목 / 내용 / 작성자 / 날짜 / 시간");
-//        System.out.println("--------------------------------------------");
-//        for (int i = articleList.size() - 1; i >= 0; i--) {
-//            Article article = articleList.get(i);
-//            System.out.printf("%d / %s / %s / %s / %s / %s\n",
-//                    article.getId(), article.getTitle(), article.getContent(), article.getMemberName(), article.getInsDate(), article.getInsTime());
-//        }
-//        System.out.println("--------------------------------------------");
-    }
+  
     //게시글 작성하기
     public void write() {
         if(memberId == -1){
             System.out.println("로그인 해주세요.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             return;
         }
-
         System.out.print("제목 : ");
         String title = Container.getSc().nextLine().trim();
         System.out.print("내용 : ");
         String content = Container.getSc().nextLine().trim();
+
         System.out.print("1. 자유게시판 2. 공지게시판 // 1 or 2: ");
         String Code = Container.getSc().nextLine().trim();
         int articleCode = _getIntParam(Code);
@@ -82,6 +71,7 @@ public class ArticleController {
         }
         System.out.println("로그인 실패");
     }
+
     //memberId를 가져가서 유저이름 표시 + 로그인 상태 on/off 표시
     public void loginSet() {
         String rs = articleService.loginSet(memberId);
@@ -96,6 +86,7 @@ public class ArticleController {
         memberId = -1;
     }
 
+    //게시글 데이터 가져오기
     public void FreeBoard() {
         int articleCode = 1;
         System.out.println("자유게시판");
@@ -107,8 +98,6 @@ public class ArticleController {
         System.out.println("공지게시판");
         printBoard(articleCode);
     }
-
-
 
     void printBoard(int articleCode) {
         List<Article> articleList = articleService.findAll(articleCode);

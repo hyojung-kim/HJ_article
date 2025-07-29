@@ -27,7 +27,4 @@ public class Container {
     public static int getMemberId(){
         return memId;
     }
-
-
-
 }

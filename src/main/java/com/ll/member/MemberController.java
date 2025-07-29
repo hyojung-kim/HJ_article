@@ -21,7 +21,9 @@ public class MemberController {
         }
         System.out.print("PW : ");
         String PW = Container.getSc().nextLine().trim();
-        memberService.join(userId, PW);
+
+        Member member = new Member(userId, PW);
+        memberService.join(member);
         System.out.printf("%s 가입완료.\n", userId);
     }
 

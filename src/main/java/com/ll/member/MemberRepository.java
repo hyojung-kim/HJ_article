@@ -16,9 +16,9 @@ public class MemberRepository {
         return row;
     }
 
-    public void join(String rsId, String pw) {
+    public void join(Member member) {
         String sql = String.format("INSERT INTO MEMBER (userId, password) \n" +
-                "VALUES('%s', '%s');", rsId, pw);
+                "VALUES('%s', '%s');", member.getMemberName(), member.getPw());
         Container.getDBConnection().insert(sql);
     }
 

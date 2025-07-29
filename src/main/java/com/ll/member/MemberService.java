@@ -17,8 +17,8 @@ public class MemberService {
         return rs;
     }
 
-    public void join(String rsId, String PW) {
-        memberRepository.join(rsId, PW);
+    public void join(Member member) {
+        memberRepository.join(member);
     }
 
     public String loginSet(int memberId) {

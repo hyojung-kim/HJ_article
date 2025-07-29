@@ -21,16 +21,15 @@ public class ArticleController {
         }
         System.out.print("1. 자유게시판 2. 공지게시판 // 1 or 2: ");
         String Code = Container.getSc().nextLine().trim();
-        System.out.print("제목 : ");
-        String title = Container.getSc().nextLine().trim();
-        System.out.print("내용 : ");
-        String content = Container.getSc().nextLine().trim();
-
         int articleCode = _getIntParam(Code);
         if(articleCode == -1){
             System.out.println("잘못된 입력입니다.");
             return;
         }
+        System.out.print("제목 : ");
+        String title = Container.getSc().nextLine().trim();
+        System.out.print("내용 : ");
+        String content = Container.getSc().nextLine().trim();
 
         Article article = new Article(title, content, Container.getMemberId(), articleCode);
         int id = articleService.create(article);

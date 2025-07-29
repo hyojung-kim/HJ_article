@@ -5,8 +5,9 @@ import com.ll.db.DBConnection;
 import java.util.Scanner;
 
 public class Container {
-    private  static Scanner sc;
+    private static Scanner sc;
     private static DBConnection dbConnection;
+
 
     public static void init() {sc = new Scanner(System.in);}
     public static void close() { sc.close();}
@@ -16,6 +17,10 @@ public class Container {
             dbConnection = new DBConnection();
         }
         return dbConnection;
+    }
+    public static int getMemberId(){
+        int memberId = -1;
+        return memberId;
     }
 
 }

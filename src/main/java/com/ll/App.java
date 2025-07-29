@@ -2,11 +2,13 @@ package com.ll;
 
 import com.ll.article.ArticleController;
 import com.ll.db.DBConnection;
+import com.ll.member.MemberController;
 import com.ll.system.SystemController;
 
 
 public class App {
     ArticleController articleController;
+    MemberController memberController;
     SystemController systemController;
 
 
@@ -21,6 +23,7 @@ public class App {
 
         articleController = new ArticleController();
         systemController = new SystemController();
+        memberController = new MemberController();
 
     }
     public void run(){
@@ -33,12 +36,12 @@ public class App {
                 articleController.write();
                 screen();
             } else if (request.getActionCode().equals("회원가입")) {
-                articleController.join();
+                memberController.join();
             } else if (request.getActionCode().equals("로그인")) {
-                articleController.login();
+                memberController.login();
                 screen();
             }else if (request.getActionCode().equals("로그아웃")) {
-                articleController.logout();
+                memberController.logout();
                 screen();
             }
 
@@ -53,7 +56,7 @@ public class App {
         System.out.println("2. 로그인");
         System.out.println("3. 로그아웃");
         System.out.print("상태 ");
-        articleController.loginSet();
+        memberController.loginSet();
         articleController.FreeBoard();
         articleController.Notice();
         System.out.println("게시글 등록");

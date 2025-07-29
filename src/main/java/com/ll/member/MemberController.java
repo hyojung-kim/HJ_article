@@ -12,6 +12,10 @@ public class MemberController {
 
     //회원가입
     public void join() {
+        if(Container.getMemberId() != -1){
+            System.out.println("회원 가입 시 로그아웃 할 것!");
+            return;
+        }
         System.out.print("ID : ");
         String userId = Container.getSc().nextLine().trim();
         Map<String, Object> rs = memberService.IsDuplicate(userId);

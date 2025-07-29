@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b48ac7d7-7bc2-44e3-9a4d-5458c61376a8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/article/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/article/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/member/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/member/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/member/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/member/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/member/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/member/MemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/member/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/member/MemberService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

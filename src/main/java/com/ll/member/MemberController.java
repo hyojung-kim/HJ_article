@@ -6,10 +6,8 @@ import java.util.Map;
 
 public class MemberController {
     MemberService memberService;
-    int memId;
     public MemberController(){
         memberService = new MemberService();
-        memId = Container.getMemberId();
     }
 
     //회원가입
@@ -29,7 +27,7 @@ public class MemberController {
 
     //로그인
     public void login() {
-        if(memId != -1){
+        if(Container.getMemberId() != -1){
             System.out.println("로그아웃 해주세요!!!!!!!!!!!");
             return;
         }
@@ -40,7 +38,7 @@ public class MemberController {
         String userPw = Container.getSc().nextLine().trim();
         Map<String,Object> rs = memberService.IsDuplicate(userId, userPw);
         if(!rs.isEmpty()){
-            memId = (int)rs.get("id");
+            Container.setMemberId((int)rs.get("id"));
             System.out.println(rs.get("userId") + "로그인");
             return;
         }
@@ -49,16 +47,16 @@ public class MemberController {
 
     //memberId를 가져가서 유저이름 표시 + 로그인 상태 on/off 표시
     public void loginSet() {
-        String rs = memberService.loginSet(memId);
+        String rs = memberService.loginSet(Container.getMemberId());
         System.out.println(rs); // "OFF"; or ("UserId") + " ON";
     }
 
     public void logout() {
-        if(memId == -1){
+        if(Container.getMemberId() == -1){
             System.out.println("로그인 해주세요!!!!!!!!!!!");
             return;
         }
-        memId = -1;
+        Container.setMemberId(-1);
     }
 
 

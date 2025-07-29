@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Container {
     private static Scanner sc;
     private static DBConnection dbConnection;
+    private static int memId = -1;
 
 
     public static void init() {sc = new Scanner(System.in);}
@@ -18,9 +19,15 @@ public class Container {
         }
         return dbConnection;
     }
-    public static int getMemberId(){
-        int memberId = -1;
-        return memberId;
+    // static 메서드: 전역에서 호출 가능
+    public static void setMemberId(int id) {
+        memId = id;
     }
+
+    public static int getMemberId(){
+        return memId;
+    }
+
+
 
 }
